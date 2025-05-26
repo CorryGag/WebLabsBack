@@ -1,0 +1,108 @@
+.app__container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  color: #333;
+}
+
+.title {
+  text-align: center;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.loading,
+.error,
+.no__users,
+.no__subscriptions {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #666;
+}
+
+.user__card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.user__card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.user__name {
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  color: #0056b3;
+}
+
+.user__email {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.subscriptions__title {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.subscriptions__list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.subscription__item {
+  background: #e9f0ff;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #a1a1a1;
+  cursor: default;
+}
+
+.btn:not(:disabled):hover {
+  background-color: #003d7a;
+}
+
+.page__info {
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: 600;
+}
