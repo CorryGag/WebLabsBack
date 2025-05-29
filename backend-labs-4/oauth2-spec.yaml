@@ -1,0 +1,63 @@
+openapi: 3.0.0
+servers:
+  - url: http://localhost:8080
+info:
+  title: OAuth 2.0 via Keycloak
+  version: 1.0.0
+
+components:
+  securitySchemes:
+
+    keycloakAuthCode:
+      type: oauth2
+      description: Authorization Code Flow
+      flows:
+        authorizationCode:
+          authorizationUrl: http://localhost:8080/realms/Tkachuk/protocol/openid-connect/auth
+          tokenUrl: http://localhost:8080/realms/Tkachuk/protocol/openid-connect/token
+          scopes:
+            openid: Authorization to access standard user information
+
+    keycloakImplicit:
+      type: oauth2
+      description: Implicit Flow
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8080/realms/Tkachuk/protocol/openid-connect/auth
+          scopes:
+            openid: Authorization to access standard user information
+
+    keycloakPassword:
+      type: oauth2
+      description: Password Credentials Flow
+      flows:
+        password:
+          tokenUrl: http://localhost:8080/realms/Tkachuk/protocol/openid-connect/token
+          scopes:
+            openid: Authorization to access standard user information
+
+    keycloakClientCreds:
+      type: oauth2
+      description: Client Credentials Flow
+      flows:
+        clientCredentials:
+          tokenUrl: http://localhost:8080/realms/Tkachuk/protocol/openid-connect/token
+          scopes:
+            openid: Authorization to access standard user information
+
+paths:
+  /realms/Tkachuk/protocol/openid-connect/userinfo:
+    get:
+      summary: Keycloak user information
+      security:
+        - keycloakAuthCode: [openid]
+        - keycloakImplicit: [openid]
+        - keycloakPassword: [openid]
+        - keycloakClientCreds: [openid]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
